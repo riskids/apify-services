@@ -12,6 +12,7 @@ export interface AppConfig {
   // Server
   port: number;
   nodeEnv: string;
+  API_PREFIX: string;
 
   // Apify
   apifyTokenFilePath: string;
@@ -66,6 +67,7 @@ export const config: AppConfig = {
   // Server
   port: getEnvVarAsInt('PORT', 3000),
   nodeEnv: getEnvVar('NODE_ENV', 'development'),
+  API_PREFIX: getEnvVar('API_PREFIX', '/api'),
 
   // Apify
   apifyTokenFilePath: getEnvVar('APIFY_TOKEN_FILE_PATH', './config/apify-token.txt'),

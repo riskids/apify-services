@@ -24,7 +24,7 @@ export function createApp(deps: RouteDependencies): Application {
   app.use(express.urlencoded({ extended: true }));
 
   // Rate limiting
-  app.use(defaultRateLimiter);
+  // app.use(defaultRateLimiter);
 
   // Request logging
   const loggingMiddleware = new LoggingMiddleware(deps.logger);

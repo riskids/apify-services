@@ -11,7 +11,9 @@
     "test:unit": "jest --testPathPattern=tests/unit",
     "test:integration": "jest --testPathPattern=tests/integration",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "scrape:x": "ts-node src/scripts/scrape-x-cli.ts",
+    "dedupe:csv": "ts-node src/scripts/dedupe-csv.ts"
   },
   "keywords": [
     "apify",

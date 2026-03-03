@@ -17,6 +17,12 @@ export interface IScrapingService {
   startJob(request: ScrapingRequest): Promise<ScrapingJob>;
 
   /**
+   * Start a synchronous scraping job for X platform
+   * waits for completion and returns results directly
+   */
+  scrapeXSync(request: ScrapingRequest): Promise<ScrapingResult<any>>;
+
+  /**
    * Get job status
    */
   getJobStatus(jobId: string): Promise<JobStatus>;

@@ -36,11 +36,7 @@ export class LoggingMiddleware {
     this.logger.info(`Request started`, requestInfo);
 
     // Capture response finish
-    const originalEnd = res.end.bind(res);
-    res.end = (...args: any[]) => {
-      res.end = originalEnd;
-      res.end(...args);
-
+    res.on('finish', () => {
       const duration = Date.now() - startTime;
       
       this.logger.info(`Request completed`, {
@@ -50,7 +46,7 @@ export class LoggingMiddleware {
         statusCode: res.statusCode,
         duration: `${duration}ms`,
       });
-    };
+    });
 
     next();
   }

@@ -4,6 +4,7 @@
 
 import { Router } from 'express';
 import { createScrapingRouter } from './scraping.routes';
+import { createSyncRouter } from './sync.routes';
 import { createHealthRouter } from './health.routes';
 import { createDocsRouter } from './docs.routes';
 import { ILogger } from '../utils/ILogger';
@@ -24,6 +25,9 @@ export function createRoutes(deps: RouteDependencies): Router {
 
   // Health routes
   router.use('/health', createHealthRouter(deps.logger, deps.tokenManager));
+
+  // Sync routes (synchronous scraping)
+  router.use('/sync', createSyncRouter(deps.scrapingService, deps.logger));
 
   // Scraping routes
   router.use('/scrape', createScrapingRouter(deps.scrapingService, deps.logger));

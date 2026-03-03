@@ -83,6 +83,37 @@ export class ScrapingService implements IScrapingService {
   }
 
   /**
+   * Start a synchronous scraping job for X platform
+   * waits for completion and returns results directly
+   */
+  public async scrapeXSync(request: ScrapingRequest): Promise<ScrapingResult<any>> {
+    this.logger.info(`Starting synchronous X scraping`, { config: request.config });
+
+    // Validate platform
+    if (!this.actorRegistry.isRegistered('x')) {
+      throw new Error(`Platform 'x' is not supported`);
+    }
+
+    try {
+      // Get X actor directly from registry
+      const actor = this.actorRegistry.get('x');
+
+      // Execute scraping synchronously (no queue, no job)
+      const result = await actor.execute(request.config);
+
+      this.logger.info(`Synchronous X scraping completed`, { 
+        totalItems: result.metadata.totalItems,
+        duration: result.metadata.totalDuration 
+      });
+
+      return result;
+    } catch (error) {
+      this.logger.error(`Synchronous X scraping failed`, error as Error);
+      throw error;
+    }
+  }
+
+  /**
    * Get job status
    */
   public async getJobStatus(jobId: string): Promise<JobStatus> {

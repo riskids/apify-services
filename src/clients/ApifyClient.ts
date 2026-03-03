@@ -8,11 +8,13 @@ import { TokenManager } from './TokenManager';
 import { ILogger } from '../utils/ILogger';
 
 export class ApifyClient implements IApiClient {
-  private client: ApifyClientLib;
+  private client!: ApifyClientLib;
   private tokenManager: TokenManager;
   private logger: ILogger;
   private readonly MAX_RETRIES = 3;
   private readonly RETRY_DELAY = 1500;
+  private readonly TOKEN_ROTATION_DELAY = 3000; // 3 detik delay setelah rotasi token
+  private isHandlingTokenExhaustion: boolean = false;
 
   constructor(tokenManager: TokenManager, logger: ILogger) {
     this.tokenManager = tokenManager;
@@ -45,6 +47,10 @@ export class ApifyClient implements IApiClient {
     return this.executeWithRetry(async () => {
       const dataset = await this.client.dataset(datasetId).get();
       
+      if (!dataset) {
+        throw new Error(`Dataset ${datasetId} not found`);
+      }
+      
       return {
         id: dataset.id,
         itemCount: dataset.itemCount,
@@ -70,6 +76,7 @@ export class ApifyClient implements IApiClient {
 
   /**
    * Execute operation with retry logic and token rotation
+   * Protected against concurrent token exhaustion
    */
   private async executeWithRetry<T>(
     operation: () => Promise<T>,
@@ -85,19 +92,40 @@ export class ApifyClient implements IApiClient {
 
         // Check if it's a 403 error (token exhausted)
         if (this.isTokenExhaustedError(error)) {
-          this.logger.warn(`Token exhausted for ${context}, rotating...`, { attempt });
-
-          const rotated = await this.tokenManager.handleTokenExhausted();
-          
-          if (!rotated) {
-            throw new Error('All Apify tokens have been exhausted. Please add more tokens.');
+          // Circuit breaker: cegah multiple concurrent token exhaustion handling
+          if (this.isHandlingTokenExhaustion) {
+            this.logger.warn(`Token exhaustion already being handled, waiting...`, { attempt });
+            // Tunggu sampai token rotation selesai
+            await new Promise(resolve => setTimeout(resolve, this.TOKEN_ROTATION_DELAY));
+            
+            // Reinitialize client (token mungkin sudah di-rotate oleh thread lain)
+            try {
+              this.initializeClient();
+            } catch (e) {
+              // Token mungkin sudah habis
+            }
+            continue;
           }
 
-          // Reinitialize client with new token
-          this.initializeClient();
+          this.isHandlingTokenExhaustion = true;
           
-          // Wait before retry
-          await new Promise(resolve => setTimeout(resolve, this.RETRY_DELAY));
+          try {
+            this.logger.warn(`Token exhausted for ${context}, rotating...`, { attempt });
+
+            const rotated = await this.tokenManager.handleTokenExhausted();
+            
+            if (!rotated) {
+              throw new Error('All Apify tokens have been exhausted. Please add more tokens.');
+            }
+
+            // Reinitialize client with new token
+            this.initializeClient();
+            
+            // Wait longer after token rotation to prevent rapid removal
+            await new Promise(resolve => setTimeout(resolve, this.TOKEN_ROTATION_DELAY));
+          } finally {
+            this.isHandlingTokenExhaustion = false;
+          }
           continue;
         }
 

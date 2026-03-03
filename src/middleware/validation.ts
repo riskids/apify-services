@@ -102,3 +102,20 @@ export const listJobsQuerySchema = {
     limit: Joi.number().integer().min(1).max(100),
   }),
 };
+
+// Schema for X synchronous scraping (no platform field needed)
+export const xSyncRequestSchema = {
+  body: Joi.object({
+    config: Joi.object({
+      keywords: Joi.string().required(),
+      startDate: Joi.string().isoDate().required(),
+      endDate: Joi.string().isoDate().required(),
+      maxItems: Joi.number().integer().min(1).max(10000).required(),
+    }).required(),
+    options: Joi.object({
+      priority: Joi.string().valid('low', 'normal', 'high'),
+      callbackUrl: Joi.string().uri(),
+      webhookUrl: Joi.string().uri(),
+    }),
+  }),
+};

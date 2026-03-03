@@ -6,7 +6,7 @@ import { BaseActor } from '../base/BaseActor';
 import { IApiClient } from '../../clients/IApiClient';
 import { ILogger } from '../../utils/ILogger';
 import { RedditInput, RedditOutput, RedditPost, ApifyRedditPost } from './RedditInput';
-import { DateUtils } from '../../utils/DateUtils';
+import { DateUtils } from '../../utils/dateUtils';
 import { FileUtils } from '../../utils/fileUtils';
 
 export class RedditActor extends BaseActor<RedditInput, RedditOutput> {
