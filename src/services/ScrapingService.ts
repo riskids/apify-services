@@ -114,6 +114,68 @@ export class ScrapingService implements IScrapingService {
   }
 
   /**
+   * Start a synchronous scraping job for Google Maps
+   * waits for completion and returns results directly
+   */
+  public async scrapeGoogleMapsSync(request: ScrapingRequest): Promise<ScrapingResult<any>> {
+    this.logger.info(`Starting synchronous Google Maps scraping`, { config: request.config });
+
+    // Validate platform
+    if (!this.actorRegistry.isRegistered('google-maps')) {
+      throw new Error(`Platform 'google-maps' is not supported`);
+    }
+
+    try {
+      // Get Google Maps actor directly from registry
+      const actor = this.actorRegistry.get('google-maps');
+
+      // Execute scraping synchronously (no queue, no job)
+      const result = await actor.execute(request.config);
+
+      this.logger.info(`Synchronous Google Maps scraping completed`, { 
+        totalItems: result.metadata.totalItems,
+        duration: result.metadata.totalDuration 
+      });
+
+      return result;
+    } catch (error) {
+      this.logger.error(`Synchronous Google Maps scraping failed`, error as Error);
+      throw error;
+    }
+  }
+
+  /**
+   * Start a synchronous scraping job for Leads Finder
+   * waits for completion and returns results directly
+   */
+  public async scrapeLeadsFinderSync(request: ScrapingRequest): Promise<ScrapingResult<any>> {
+    this.logger.info(`Starting synchronous Leads Finder scraping`, { config: request.config });
+
+    // Validate platform
+    if (!this.actorRegistry.isRegistered('leads-finder')) {
+      throw new Error(`Platform 'leads-finder' is not supported`);
+    }
+
+    try {
+      // Get Leads Finder actor directly from registry
+      const actor = this.actorRegistry.get('leads-finder');
+
+      // Execute scraping synchronously (no queue, no job)
+      const result = await actor.execute(request.config);
+
+      this.logger.info(`Synchronous Leads Finder scraping completed`, { 
+        totalItems: result.metadata.totalItems,
+        duration: result.metadata.totalDuration 
+      });
+
+      return result;
+    } catch (error) {
+      this.logger.error(`Synchronous Leads Finder scraping failed`, error as Error);
+      throw error;
+    }
+  }
+
+  /**
    * Get job status
    */
   public async getJobStatus(jobId: string): Promise<JobStatus> {

@@ -23,6 +23,18 @@ export interface IScrapingService {
   scrapeXSync(request: ScrapingRequest): Promise<ScrapingResult<any>>;
 
   /**
+   * Start a synchronous scraping job for Google Maps
+   * waits for completion and returns results directly
+   */
+  scrapeGoogleMapsSync(request: ScrapingRequest): Promise<ScrapingResult<any>>;
+
+  /**
+   * Start a synchronous scraping job for Leads Finder
+   * waits for completion and returns results directly
+   */
+  scrapeLeadsFinderSync(request: ScrapingRequest): Promise<ScrapingResult<any>>;
+
+  /**
    * Get job status
    */
   getJobStatus(jobId: string): Promise<JobStatus>;

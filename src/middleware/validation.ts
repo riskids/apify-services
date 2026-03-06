@@ -119,3 +119,33 @@ export const xSyncRequestSchema = {
     }),
   }),
 };
+
+// Schema for Google Maps synchronous scraping
+export const googleMapsSyncRequestSchema = {
+  body: Joi.object({
+    config: Joi.object({
+      location: Joi.string().required(),
+      maxResults: Joi.number().integer().min(1).max(500).required(),
+      searchStringsArray: Joi.array().items(Joi.string()).min(1),
+      language: Joi.string().default('en'),
+    }).required(),
+    options: Joi.object({
+      priority: Joi.string().valid('low', 'normal', 'high'),
+    }),
+  }),
+};
+
+// Schema for Leads Finder synchronous scraping
+export const leadsFinderSyncRequestSchema = {
+  body: Joi.object({
+    config: Joi.object({
+      keywords: Joi.string().required(),
+      location: Joi.string(),
+      industry: Joi.string(),
+      maxResults: Joi.number().integer().min(1).max(500).default(100),
+    }).required(),
+    options: Joi.object({
+      priority: Joi.string().valid('low', 'normal', 'high'),
+    }),
+  }),
+};

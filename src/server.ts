@@ -10,6 +10,8 @@ import { ApifyClient } from './clients/ApifyClient';
 import { ActorRegistry } from './actors/ActorRegistry';
 import { XActor } from './actors/x/XActor';
 import { RedditActor } from './actors/reddit/RedditActor';
+import { GoogleMapsActor } from './actors/googleMaps/GoogleMapsActor';
+import { LeadsFinderActor } from './actors/leadsFinder/LeadsFinderActor';
 import { ScrapingService } from './services/ScrapingService';
 import { ProgressService } from './services/ProgressService';
 import { QueueService } from './services/QueueService';
@@ -37,6 +39,8 @@ async function bootstrap() {
     const actorRegistry = new ActorRegistry();
     actorRegistry.register(new XActor(apifyClient, logger));
     actorRegistry.register(new RedditActor(apifyClient, logger, './config/subreddit.txt'));
+    actorRegistry.register(new GoogleMapsActor(apifyClient, logger));
+    actorRegistry.register(new LeadsFinderActor(apifyClient, logger));
 
     logger.info(`Registered ${actorRegistry.getPlatforms().length} actors`, {
       platforms: actorRegistry.getPlatforms(),

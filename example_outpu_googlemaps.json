@@ -1,0 +1,915 @@
+{
+  "success": true,
+  "metadata": {
+    "platform": "google-maps",
+    "jobId": "",
+    "scrapedAt": "2026-03-04T10:04:39.810Z",
+    "completedAt": "2026-03-04T10:04:39.810Z",
+    "totalItems": 0,
+    "totalDuration": 20393
+  },
+  "data": {
+    "places": [
+      {
+        "name": "Five Stars Garage Door",
+        "address": "30 N Park Rd #904, Thornhill, ON L4J 0G6, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 47,
+        "phoneNumber": "+1 647-370-0033",
+        "website": "https://fivestarsgaragedoor.ca/",
+        "placeId": "ChIJq6r6bTwsK4gREU7jJKX9k6U",
+        "categories": [
+          "Garage door supplier",
+          "Door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "PROFIX Garage Door Repair",
+        "address": "7378 Yonge St #109, Thornhill, ON L4J 8J1, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 325,
+        "phoneNumber": "+1 647-501-3667",
+        "website": "https://www.profixgaragedoor.ca/?utm_source=gmb",
+        "placeId": "ChIJD1ZleZQtK4gRihp2GodQhVE",
+        "categories": [
+          "Garage door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Smart Care Garage Doors - Vaughan",
+        "address": "104 Disera Dr, Vaughan, ON L4J 0G8, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 93,
+        "phoneNumber": "+1 416-477-5447",
+        "website": "https://smartcaregaragedoors.ca/",
+        "placeId": "ChIJvQGlxu0tK4gRh468LMW1Fvs",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "12 AM to 6 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Closed"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Local Garage Door Repair Vaughan",
+        "address": "1490 Major MacKenzie Dr W, Vaughan, ON L6A 4H6, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 17,
+        "phoneNumber": "+1 647-478-3809",
+        "website": "https://www.garageservicevaughan.ca/",
+        "placeId": "ChIJKZVoZgQpK4gRhDpgUuGZuAg",
+        "categories": [
+          "Garage door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "7 AM to 7:30 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "7 AM to 8 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "7 AM to 7:30 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "7 AM to 7:30 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7 AM to 7:30 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "7 AM to 7:30 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "7 AM to 7:30 PM"
+          }
+        ]
+      },
+      {
+        "name": "Penguin Garage Doors",
+        "address": "141 Gailcrest Cir, Thornhill, ON L4J 5V9, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 171,
+        "phoneNumber": "+1 647-621-3331",
+        "website": "https://penguingaragedoors.ca/",
+        "placeId": "ChIJWyI3LHrfmiwRcFdJKaAhg6E",
+        "categories": [
+          "Garage door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "8 AM to 10 PM"
+          }
+        ]
+      },
+      {
+        "name": "Fix It Right Garage Doors",
+        "address": "7250 Keele St Unit 152, Concord, ON L4K 1Z8, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 495,
+        "phoneNumber": "+1 416-779-8772",
+        "website": "https://fixitrightgaragedoors.ca/",
+        "placeId": "ChIJVVWp9eIrK4gRK0MulXX1sBg",
+        "categories": [
+          "Garage door supplier",
+          "Door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "7 AM to 12 AM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "7 AM to 12 AM"
+          }
+        ]
+      },
+      {
+        "name": "Maple Overhead Garage Doors",
+        "address": "600 Bowes Rd Unit 33, Concord, ON L4K 4A3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 245,
+        "phoneNumber": "+1 647-492-0964",
+        "website": "https://www.maplegaragedoors.com/?utm_campaign=gmb",
+        "placeId": "ChIJgYTGgOEvK4gR6aJPCQPxaTo",
+        "categories": [
+          "Garage door supplier",
+          "General contractor"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Closed"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Closed"
+          }
+        ]
+      },
+      {
+        "name": "Dov Open My Garage",
+        "address": "20 Jacob Keffer Pkwy, Concord, ON L4K 5E3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 5,
+        "phoneNumber": "+1 343-321-0408",
+        "website": "http://rhgaragedoorinc.ca/",
+        "placeId": "ChIJOQ9S8povK4gRf9u7Ppbg4_k",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 10 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7 AM to 1:30 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Closed"
+          },
+          {
+            "day": "Sunday",
+            "hours": "8 AM to 10 PM"
+          }
+        ]
+      },
+      {
+        "name": "Lopes Door Systems Inc",
+        "address": "2810 Major MacKenzie Dr W, Toronto, ON L6A 3L2, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 12,
+        "phoneNumber": "+1 647-494-5222",
+        "website": "https://lgaragedoorrepairs.ca/?utm_source=google&utm_medium=GMB&utm_campaign=Lopes+Door+Systems+Inc&utm_term=garage+door+repair+Toronto",
+        "placeId": "ChIJT0Vrpyo5K4gR95rlaRqcK-0",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Garage Door Beasts",
+        "address": "46 Zachary Pl, Woodbridge, ON L4H 3S4, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 122,
+        "phoneNumber": "+1 647-424-3555",
+        "website": "https://www.garagedoorbeasts.ca/",
+        "placeId": "ChIJ5TYKYoIpK4gRzB9vJer4XNI",
+        "categories": [
+          "Garage door supplier",
+          "Door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Dynamic Industries",
+        "address": "299 Basaltic Rd #4, Concord, ON L4K 4W8, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 13,
+        "phoneNumber": "+1 905-879-5888",
+        "website": "https://www.dm-ind.com/main/contact/",
+        "placeId": "ChIJI5AW48UuK4gRSUmKmuoXWbE",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "8 AM to 4 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Closed"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Closed"
+          }
+        ]
+      },
+      {
+        "name": "Top Doors",
+        "address": "67 Vedette Wy, Vaughan, ON L4H 4K3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 30,
+        "phoneNumber": "+1 905-758-1032",
+        "website": "https://top-doors.ca/",
+        "placeId": "ChIJc5YdKrWKE04R-8STQ4aoyfY",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "7 AM to 9 PM"
+          }
+        ]
+      },
+      {
+        "name": "Morningstar Garage Doors",
+        "address": "29 Marisa Ct, Vaughan, ON L4J 6H9, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 43,
+        "phoneNumber": "+1 416-515-2001",
+        "website": "https://morningstargaragedoors.com/",
+        "placeId": "ChIJVfMJB_0tK4gRxejfAzX-7XU",
+        "categories": [
+          "Garage door supplier",
+          "Repair service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 7:30 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 8 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 7:30 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 7:30 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "8 AM to 7:30 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "8 AM to 5 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Closed"
+          }
+        ]
+      },
+      {
+        "name": "Riders Magic Touch Inc.",
+        "address": "150 St Joan of Arc Ave, Maple, ON L6A 3B8, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "phoneNumber": "+1 647-390-8824",
+        "website": "http://www.ridersmagictouch.com/",
+        "placeId": "ChIJ_R7YDJUpK4gRiXmRF6nc57U",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Luma Doors + Windows",
+        "address": "45 Rodinea Rd Unit 1, Maple, ON L6A 1R3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 122,
+        "phoneNumber": "+1 905-303-0560",
+        "website": "https://lumadoors.ca/",
+        "placeId": "ChIJN7WCuUMpK4gRj_AXNXo6LjI",
+        "categories": [
+          "Door supplier",
+          "Door manufacturer",
+          "Window installation service",
+          "Window supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "9 AM to 5 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "9 AM to 5 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "9 AM to 5 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "9 AM to 5 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "9 AM to 5 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Closed"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Closed"
+          }
+        ]
+      },
+      {
+        "name": "Seven Group Windows & Doors Inc.",
+        "address": "99 Rodinea Rd, Maple, ON L6A 1R3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 21,
+        "phoneNumber": "+1 647-708-7779",
+        "website": "http://7gwindows.com/",
+        "placeId": "ChIJDfbV41QpK4gRMp2yA8vu-nQ",
+        "categories": [
+          "Window installation service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7 AM to 9 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "7 AM to 6 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Closed"
+          }
+        ]
+      },
+      {
+        "name": "Smart Homes Pro",
+        "address": "291 Ilan Ramon Blvd, Maple, ON L6A 0W4, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 118,
+        "phoneNumber": "+1 647-205-8221",
+        "website": "https://smarthomespro.ca/",
+        "placeId": "ChIJ5ZdR_VArK4gRV0W4j17dc6o",
+        "categories": [
+          "Home automation company",
+          "Home cinema installation",
+          "Security system installation service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Caldas Contracting Epoxy Flooring Experts",
+        "address": "102 Sylwood Crescent, Maple, ON L6A 2P7, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 11,
+        "phoneNumber": "+1 647-978-2770",
+        "website": "https://caldascontracting.com/",
+        "placeId": "ChIJsWiN2AS1JaAReHcUG9II2UI",
+        "categories": [
+          "Flooring contractor",
+          "Floor refinishing service"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Thursday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Friday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Saturday",
+            "hours": "Open 24 hours"
+          },
+          {
+            "day": "Sunday",
+            "hours": "Open 24 hours"
+          }
+        ]
+      },
+      {
+        "name": "Banz Renovation in Vaughan",
+        "address": "101 Convoy Crescent, Maple, ON L6A 3H3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 60,
+        "phoneNumber": "+1 416-875-5013",
+        "website": "https://banzrenovations.com/",
+        "placeId": "ChIJJ4RoNsMpK4gRi_VBKgMmpPA",
+        "categories": [
+          "General contractor",
+          "Bathroom remodeler",
+          "Construction company",
+          "Contractor",
+          "Custom home builder",
+          "Deck builder",
+          "Interior construction contractor",
+          "Kitchen remodeler",
+          "Remodeler",
+          "Stair contractor"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "8 AM to 9 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "8 AM to 9 PM"
+          }
+        ]
+      },
+      {
+        "name": "Garage Door Repair Thornhill",
+        "address": "7700 Bathurst St, Thornhill, ON L4J 7Y3, Canada",
+        "latitude": 0,
+        "longitude": 0,
+        "reviewsCount": 1,
+        "phoneNumber": "+1 416-907-6932",
+        "website": "https://www.thornhillon-garagerepairs.ca/",
+        "placeId": "ChIJ7QZcsMctK4gRqIDhOl_RW3A",
+        "categories": [
+          "Garage door supplier"
+        ],
+        "openingHours": [
+          {
+            "day": "Monday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Tuesday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Wednesday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Thursday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Friday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Saturday",
+            "hours": "7:30 AM to 7:30 PM"
+          },
+          {
+            "day": "Sunday",
+            "hours": "7:30 AM to 7:30 PM"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "location": "Vaughan, Canada",
+      "maxResults": 20,
+      "searchStringsArray": [
+        "Garage Door Services"
+      ],
+      "language": "en",
+      "scrapedAt": "2026-03-04T10:04:39.810Z",
+      "totalPlaces": 20
+    }
+  },
+  "statistics": {
+    "totalItems": 0,
+    "duration": 20393,
+    "successRate": 100
+  }
+}

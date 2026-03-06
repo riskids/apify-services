@@ -90,7 +90,16 @@ export class ApifyClient implements IApiClient {
       } catch (error) {
         lastError = error as Error;
 
-        // Check if it's a 403 error (token exhausted)
+        // Try to extract error message from various formats
+        const errorInfo = this.extractErrorInfo(error);
+        this.logger.warn(`Error in ${context}, attempt ${attempt}/${this.MAX_RETRIES}`, {
+          attempt,
+          error: errorInfo.message,
+          statusCode: errorInfo.statusCode,
+          isTokenExhausted: this.isTokenExhaustedError(error),
+        });
+
+        // Check if it's a token exhausted error
         if (this.isTokenExhaustedError(error)) {
           // Circuit breaker: cegah multiple concurrent token exhaustion handling
           if (this.isHandlingTokenExhaustion) {
@@ -111,6 +120,8 @@ export class ApifyClient implements IApiClient {
           
           try {
             this.logger.warn(`Token exhausted for ${context}, rotating...`, { attempt });
+            // Wait longer after token rotation to prevent rapid removal
+            await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 7000) + 3000));
 
             const rotated = await this.tokenManager.handleTokenExhausted();
             
@@ -122,7 +133,7 @@ export class ApifyClient implements IApiClient {
             this.initializeClient();
             
             // Wait longer after token rotation to prevent rapid removal
-            await new Promise(resolve => setTimeout(resolve, this.TOKEN_ROTATION_DELAY));
+            // await new Promise(resolve => setTimeout(resolve, this.TOKEN_ROTATION_DELAY));
           } finally {
             this.isHandlingTokenExhaustion = false;
           }
@@ -131,9 +142,9 @@ export class ApifyClient implements IApiClient {
 
         // If not a token error and not the last attempt, retry
         if (attempt < this.MAX_RETRIES) {
-          this.logger.warn(`Error in ${context}, retrying...`, {
+          this.logger.warn(`Retrying ${context}...`, {
             attempt,
-            error: lastError.message,
+            error: errorInfo.message,
           });
           await new Promise(resolve => setTimeout(resolve, this.RETRY_DELAY));
         }
@@ -144,21 +155,106 @@ export class ApifyClient implements IApiClient {
   }
 
   /**
-   * Check if error is a token exhausted error (403)
+   * Extract error information from various error formats
+   */
+  private extractErrorInfo(error: any): { message: string; statusCode?: number } {
+    if (!error) {
+      return { message: 'Unknown error' };
+    }
+
+    // Handle direct Error object
+    if (error.message) {
+      // Check if it's an Apify API error with response body
+      if (error.response && error.response.data) {
+        const responseData = error.response.data;
+        return {
+          message: responseData.message || responseData.error || error.message,
+          statusCode: error.response.status || error.statusCode,
+        };
+      }
+
+      // Check if message contains JSON (like the Apify services format: {"attempt":2,"error":"..."})
+      if (error.message.includes('"error":')) {
+        try {
+          // Try to extract JSON from the error message (might have prefix/suffix text)
+          const jsonMatch = error.message.match(/\{[\s\S]*"error"[\s\S]*\}/);
+          if (jsonMatch) {
+            const parsed = JSON.parse(jsonMatch[0]);
+            // Handle Apify Services format with attempt and error fields
+            if (parsed.error) {
+              return {
+                message: parsed.error,
+                statusCode: parsed.statusCode || error.statusCode,
+              };
+            }
+          }
+        } catch (e) {
+          // Not JSON, use as-is
+        }
+      }
+
+      return {
+        message: error.message,
+        statusCode: error.statusCode,
+      };
+    }
+
+    return { message: String(error) };
+  }
+
+  /**
+   * Check if error is a token exhausted error (403/402)
    */
   private isTokenExhaustedError(error: any): boolean {
     if (!error) return false;
     
     const errorMsg = error.message?.toLowerCase() || '';
+    const errorStack = error.stack?.toLowerCase() || '';
     const statusCode = error.statusCode;
+    const combinedMsg = errorMsg + ' ' + errorStack;
+
+    // Handle Apify Services JSON error format: {"attempt":2,"error":"...exceed your remaining usage..."}
+    // The error message might contain JSON with error field
+    if (errorMsg.includes('"error":') || statusCode === 401) {
+      try {
+        // Try to extract JSON from the error message (might have prefix/suffix text)
+        const jsonMatch = errorMsg.match(/\{[\s\S]*"error"[\s\S]*\}/);
+        if (jsonMatch) {
+          const parsed = JSON.parse(jsonMatch[0]);
+          if (parsed.error) {
+            const parsedErrorMsg = parsed.error.toLowerCase();
+            return (
+              parsedErrorMsg.includes('exceed your remaining usage') ||
+              parsedErrorMsg.includes('exceed your remaining') ||
+              parsedErrorMsg.includes('insufficient usage') ||
+              parsedErrorMsg.includes('not enough usage') ||
+              parsedErrorMsg.includes('upgrade to a paid plan') ||
+              parsedErrorMsg.includes('quota exceeded') ||
+              parsedErrorMsg.includes('token is not valid') ||
+              parsedErrorMsg.includes('payment required')
+            );
+          }
+        }
+      } catch (e) {
+        // Not valid JSON, continue with other checks
+      }
+    }
 
     return (
+      statusCode === 401 ||
       statusCode === 403 ||
-      errorMsg.includes('403') ||
-      errorMsg.includes('forbidden') ||
-      errorMsg.includes('quota exceeded') ||
-      errorMsg.includes('limit exceeded') ||
-      errorMsg.includes('payment required')
+      statusCode === 402 ||
+      combinedMsg.includes('403') ||
+      combinedMsg.includes('402') ||
+      combinedMsg.includes('forbidden') ||
+      combinedMsg.includes('quota exceeded') ||
+      combinedMsg.includes('limit exceeded') ||
+      combinedMsg.includes('payment required') ||
+      combinedMsg.includes('exceed your remaining usage') ||
+      combinedMsg.includes('exceed your remaining') ||
+      combinedMsg.includes('insufficient usage') ||
+      combinedMsg.includes('not enough usage') ||
+      combinedMsg.includes('upgrade to a paid plan')
     );
   }
 
