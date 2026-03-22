@@ -217,7 +217,7 @@ export class XActor extends BaseActor<XInput, XOutput> {
 
     const input = {
       searchTerms: [searchQuery],
-      sortBy: 'Top',
+      sortBy: 'Latest',
       maxItems: range.targetItems,
       minRetweets: 0,
       minLikes: 0,
